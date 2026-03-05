@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anxiety Relief App | Calm Your Mind Naturally</title>
+    <meta name="description" content="Free anxiety relief tools that work. No login, no cost, just peace when you need it most. Start feeling calmer in 2 minutes.">
+    
+    <!-- Browser Tab Icon - BRAIN -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%234299e1'>🧠</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', 'Inter', sans-serif;
+            background: #e6f0fa;
+            color: #1e3a5f;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Calm Blue Gradient Background */
+        .calm-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(145deg, #c3e0ff 0%, #a9d0f5 30%, #8fc0e9 70%, #75b0dd 100%);
+            background-size: 400% 400%;
+            animation: gentleShift 20s ease infinite;
+        }
+        
+        @keyframes gentleShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Floating Clouds */
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            opacity: 0.4;
+        }
+        
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 1000px;
+            filter: blur(30px);
+            animation: drift linear infinite;
+        }
+        
+        .cloud1 {
+            width: 300px;
+            height: 100px;
+            top: 20%;
+            left: -300px;
+            animation-duration: 120s;
+        }
+        
+        .cloud2 {
+            width: 400px;
+            height: 120px;
+            top: 40%;
+            left: -400px;
+            animation-duration: 150s;
+            animation-delay: 20s;
+        }
+        
+        .cloud3 {
+            width: 250px;
+            height: 80px;
+            top: 70%;
+            left: -250px;
+            animation-duration: 100s;
+            animation-delay: 10s;
+        }
+        
+        @keyframes drift {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(100vw + 500px)); }
+        }
+        
+        /* Soft Particles */
+        .soft-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .soft-particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            filter: blur(5px);
+            animation: floatUp 15s infinite ease-in-out;
+        }
+        
+        @keyframes floatUp {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            50% { transform: translateY(-100px) translateX(20px); opacity: 0.6; }
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 60px;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px -20px rgba(30, 58, 95, 0.2);
+            animation: fadeInDown 1s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 5px 15px rgba(66, 153, 225, 0.4));
+            animation: softBob 4s infinite ease-in-out;
+        }
+        
+        @keyframes softBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            opacity: 0.8;
+        }
+        
+        .nav-link:hover {
+            opacity: 1;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4299e1;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: rgba(66, 153, 225, 0.15);
+            color: #1e3a5f;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(66, 153, 225, 0.3);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease 0.2s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+        
+        .hero-content {
+            animation: slideInLeft 1s ease 0.3s both;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #1e3a5f;
+            letter-spacing: -1px;
+        }
+        
+        .hero-title span {
+            color: #4299e1;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(66, 153, 225, 0.2);
+            z-index: -1;
+            border-radius: 4px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #2c4a6e;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s ease 0.3s both;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .calm-card {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 40px;
+            padding: 2.5rem;
+            box-shadow: 0 30px 60px -20px rgba(30, 58, 95, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .calm-card::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
+            animation: rotateSlow 25s linear infinite;
+        }
+        
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .breathing-circle {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #4299e1, #63b3ed);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 30px -5px #4299e1;
+            animation: breathe 8s infinite ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.2); opacity: 1; box-shadow: 0 25px 50px -5px #4299e1; }
+        }
+        
+        .breathing-text {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .breathing-timer {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #1e3a5f;
+            font-weight: 500;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4299e1, #63b3ed);
+            color: white;
+            box-shadow: 0 15px 25px -8px rgba(66, 153, 225, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -8px #4299e1;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #4299e1;
+            color: #1e3a5f;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(66, 153, 225, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 6rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 30px -10px rgba(66, 153, 225, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4299e1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #1e3a5f;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            margin-bottom: 6rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #2c4a6e;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .step-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .step-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(66, 153, 225, 0.2);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1e3a5f;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-desc {
+            color: #2c4a6e;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 30px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px -10px rgba(66, 153, 225, 0.2);
+            border: 1px solid rgba(66, 153, 225, 0.1);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -10px #4299e1;
+        }
+        
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: gentlePulse 3s infinite;
+        }
+        
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .tool-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #4299e1;
+        }
+        
+        .tool-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .tool-link:hover {
+            color: #4299e1;
+            border-bottom-color: #4299e1;
+        }
+        
+        /* Anxiety Scale */
+        .scale-section {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 50px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .scale-title {
+            font-size: 1.8rem;
+            color: #1e3a5f;
+            margin-bottom: 2rem;
+        }
+        
+        .scale-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .scale-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #4299e1;
+            background: white;
+            color: #1e3a5f;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .scale-btn:hover {
+            background: #4299e1;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .scale-message {
+            color: #2c4a6e;
+            font-size: 1.1rem;
+            min-height: 60px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            margin: 6rem 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #1e3a5f;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #4299e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: #1e3a5f;
+        }
+        
+        .author-info p {
+            color: #4299e1;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(5px);
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        
+        .faq-answer {
+            margin-top: 1rem;
+            color: #2c4a6e;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            color: #4299e1;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem;
+            background: linear-gradient(135deg, #4299e1, #63b3ed);
+            border-radius: 60px;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            animation: rotateSlow 25s linear infinite;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: white;
+            color: #4299e1;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -5px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(66, 153, 225, 0.2);
+            padding-top: 3rem;
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo-icon {
+            font-size: 2rem;
+        }
+        
+        .footer-logo-text {
+            color: #1e3a5f;
+        }
+        
+        .footer-text {
+            color: #2c4a6e;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a5f;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #4299e1;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #2c4a6e;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #4299e1;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 2rem 0;
+            color: #2c4a6e;
+            border-top: 1px solid rgba(66, 153, 225, 0.1);
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-content { order: 2; }
+            .hero-visual { order: 1; margin-bottom: 2rem; }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .tools-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .stats { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .tools-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .footer { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .header { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Calm Background -->
+    <div class="calm-bg"></div>
+    
+    <!-- Floating Clouds -->
+    <div class="clouds">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+    </div>
+    
+    <!-- Soft Particles -->
+    <div class="soft-particles" id="softParticles"></div>
+    
+    <div class="container">
+        <!-- Header with Logo -->
+        <header class="header">
+            <a href="https://lumacare-app.vercel.app" class="logo">
+                <span class="logo-icon">🧠</span>
+                <span class="logo-text">LumaCare</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Science</a>
+                <a href="#" class="nav-link">Techniques</a>
+                <a href="#" class="nav-link">Stories</a>
+            </nav>
+            <div>
+                <span class="badge">🌊 Free • No Login</span>
+            </div>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge">✨ Breathe. Reset. Repeat.</div>
+                <h1 class="hero-title">Anxiety feels heavy.<br><span>You don't have to carry it alone.</span></h1>
+                <p class="hero-subtitle">Simple, science-backed tools to calm your mind in moments of panic or overwhelm. No login, no cost, just peace when you need it most.</p>
+                <a href="https://lumacare-app.vercel.app" class="btn btn-primary">Find Your Calm →</a>
+                <a href="#learn" class="btn btn-outline">Learn More</a>
+            </div>
+            <div class="hero-visual">
+                <div class="calm-card">
+                    <div class="breathing-circle">
+                        <div class="breathing-text">Breathe</div>
+                    </div>
+                    <div class="breathing-timer">
+                        <span style="font-size: 2rem; font-weight: 600; color: #4299e1;">4-7-8</span> breathing
+                    </div>
+                    <p style="color: #1e3a5f; margin-top: 1rem; opacity: 0.8;">Inhale 4s • Hold 7s • Exhale 8s</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number">40M</div>
+                <div class="stat-label">adults with anxiety in the US</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2min</div>
+                <div class="stat-label">to feel relief with breathing</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">free • always</div>
+            </div>
+        </section>
+        
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Three simple steps to calm your nervous system</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🌬️</div>
+                    <h3 class="step-title">Breathe</h3>
+                    <p class="step-desc">Guided breathing exercises that activate your parasympathetic nervous system.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🧠</div>
+                    <h3 class="step-title">Reframe</h3>
+                    <p class="step-desc">Challenge anxious thoughts with cognitive restructuring techniques.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🌱</div>
+                    <h3 class="step-title">Ground</h3>
+                    <p class="step-desc">5-4-3-2-1 sensory exercises to anchor you in the present.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Anxiety Scale Interactive -->
+        <section class="scale-section">
+            <h3 class="scale-title">How anxious are you right now?</h3>
+            <div class="scale-buttons">
+                <button class="scale-btn" data-level="1">1</button>
+                <button class="scale-btn" data-level="2">2</button>
+                <button class="scale-btn" data-level="3">3</button>
+                <button class="scale-btn" data-level="4">4</button>
+                <button class="scale-btn" data-level="5">5</button>
+            </div>
+            <div class="scale-message" id="scaleMessage">
+                Tap a number to see what might help
+            </div>
+        </section>
+        
+        <!-- Tools That Help -->
+        <section class="tools">
+            <h2 class="section-title">Tools That Actually Help</h2>
+            <p class="section-subtitle">Free. No login. Just relief when you need it.</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🧘</div>
+                    <h3 class="tool-title">Box Breathing</h3>
+                    <p style="color: #2c4a6e; margin: 1rem 0;">4-4-4-4 pattern to calm your nervous system in minutes.</p>
+                    <a href="https://lumacare-app.vercel.app" class="tool-link">Try it now →</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🌬️</div>
+                    <h3 class="tool-title">4-7-8 Breathing</h3>
+                    <p style="color: #2c4a6e; margin: 1rem 0;">The relaxation breath that works like a natural tranquilizer.</p>
+                    <a href="https://lumacare-app.vercel.app" class="tool-link">Try it now →</a>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🌱</div>
+                    <h3 class="tool-title">5-4-3-2-1 Grounding</h3>
+                    <p style="color: #2c4a6e; margin: 1rem 0;">Anchor yourself in the present when panic hits.</p>
+                    <a href="https://lumacare-app.vercel.app" class="tool-link">Try it now →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2 class="section-title">Real Stories</h2>
+            <p class="section-subtitle">From people who've been where you are</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I used to have panic attacks at 3am with nowhere to turn. The breathing exercises got me through until I could see my therapist."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">E</div>
+                        <div class="author-info">
+                            <h4>Elena</h4>
+                            <p>Teacher</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"No login, no cost, no judgment. Just help when my brain wouldn't shut up. I use the grounding technique almost daily."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <h4>David</h4>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I didn't realize how much tension I was holding until I tried box breathing. My shoulders dropped an inch."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Maya</h4>
+                            <p>Freelance Writer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section class="faq">
+            <h2 class="section-title">Common Questions</h2>
+            <p class="section-subtitle">Everything you're wondering about anxiety relief</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How quickly do these techniques work?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Many people feel relief within 2-3 minutes of breathing exercises. Grounding techniques work almost instantly for panic.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need to create an account?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nope. Everything is completely free with no login required. We believe mental health tools should be accessible to everyone.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can this replace therapy?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        These are tools for daily support, not a replacement for professional help. If you're struggling deeply, please reach out to a therapist.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What if I'm having a panic attack right now?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Try 5-4-3-2-1 grounding: Name 5 things you see, 4 you feel, 3 you hear, 2 you smell, 1 you taste. Then try 4-7-8 breathing. You're safe.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">Start Feeling Calmer Today</h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; position: relative; z-index: 1; opacity: 0.9;">No login. No credit card. Just peace when you need it.</p>
+            <a href="https://lumacare-app.vercel.app" class="cta-button">👉 Try LumaCare Free</a>
+        </section>
+        
+        <!-- Footer with Logo -->
+        <footer class="footer">
+            <div>
+                <div class="footer-logo">
+                    <span class="footer-logo-icon">🧠</span>
+                    <span class="footer-logo-text">LumaCare</span>
+                </div>
+                <p class="footer-text">Mental wellness for everyone. No login, no cost, just help.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Techniques</h4>
+                <a href="https://lumacare-app.vercel.app">Box Breathing</a>
+                <a href="https://lumacare-app.vercel.app">4-7-8 Breathing</a>
+                <a href="https://lumacare-app.vercel.app">Grounding</a>
+                <a href="https://lumacare-app.vercel.app">SOS Calm</a>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="#">Blog</a>
+                <a href="#">Science</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact</a>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+        </footer>
+        
+        <div class="copyright">
+            © 2026 LumaCare. Made with 💙 for anxious humans.
+        </div>
+    </div>
+    
+    <script>
+        // Soft Particles
+        const particlesContainer = document.getElementById('softParticles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'soft-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.width = particle.style.height = Math.random() * 30 + 10 + 'px';
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Anxiety Scale Interactive
+        const scaleButtons = document.querySelectorAll('.scale-btn');
+        const scaleMessage = document.getElementById('scaleMessage');
+        
+        const messages = {
+            1: "That's great! You're doing well. Try box breathing to stay centered.",
+            2: "Mild anxiety. A few deep breaths might help. Try 4-7-8 breathing.",
+            3: "Moderate anxiety. You're not alone. Grounding techniques work well here.",
+            4: "This is tough. Take a moment to name 5 things you can see right now.",
+            5: "You're in a rough spot. Try 5-4-3-2-1 grounding. You're safe. This will pass."
+        };
+        
+        scaleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const level = btn.dataset.level;
+                scaleMessage.textContent = messages[level];
+                
+                scaleButtons.forEach(b => {
+                    b.style.background = 'white';
+                    b.style.color = '#1e3a5f';
+                });
+                btn.style.background = '#4299e1';
+                btn.style.color = 'white';
+            });
+        });
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const toggle = item.querySelector('.faq-toggle');
+                toggle.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
