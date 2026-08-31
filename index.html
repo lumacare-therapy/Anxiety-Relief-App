@@ -5,10 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anxiety Relief App | Calm Your Mind Naturally</title>
     <meta name="description" content="Free anxiety relief tools that work. No login, no cost, just peace when you need it most. Start feeling calmer in 2 minutes.">
-    <meta name="google-site-verification" content="ksJBeRJOvgNx1HVMyTtSP8PXSg2UIE7jcP-y1wUuxJs" />
     
     <!-- Browser Tab Icon - BRAIN -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%234299e1'>🧠</text></svg>">
+    
+    <!-- Canonical + OG -->
+    <link rel="canonical" href="https://lumacare.com/anxiety-relief" />
+    <meta property="og:title" content="Anxiety Relief That Works in Under 3 Minutes — Free, No Login" />
+    <meta property="og:description" content="Science-backed breathing and grounding tools for panic and overwhelm. Free forever, no account needed." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lumacare.com/og/anxiety-relief.png" />
+    
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"How quickly do these techniques work?","acceptedAnswer":{"@type":"Answer","text":"Many people feel relief within 2-3 minutes of breathing exercises. Slow exhales activate the parasympathetic nervous system, and grounding techniques work almost instantly for panic."}},
+        {"@type":"Question","name":"Do I need to create an account?","acceptedAnswer":{"@type":"Answer","text":"No. The core tools are free and work without login. An optional free account lets you save progress and track patterns over time."}},
+        {"@type":"Question","name":"Can this replace therapy?","acceptedAnswer":{"@type":"Answer","text":"No. These are tools for daily support, not a replacement for professional help. If anxiety is disrupting your life, a licensed therapist can help."}},
+        {"@type":"Question","name":"What if I'm having a panic attack right now?","acceptedAnswer":{"@type":"Answer","text":"Try 5-4-3-2-1 grounding: name 5 things you see, 4 you feel, 3 you hear, 2 you smell, 1 you taste. Then try 4-7-8 breathing. If you're in crisis, call or text 988 (US) or 9-8-8 (Canada)."}}
+      ]
+    }
+    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -337,6 +357,7 @@
             animation: breathe 8s infinite ease-in-out;
             position: relative;
             z-index: 2;
+            transition: transform 1s ease;
         }
         
         @keyframes breathe {
@@ -634,7 +655,7 @@
             min-height: 60px;
         }
         
-        /* Testimonials */
+        /* Credibility Section (replaces fake testimonials) */
         .testimonials {
             margin: 6rem 0;
         }
@@ -664,35 +685,6 @@
             margin-bottom: 1.5rem;
             color: #1e3a5f;
             line-height: 1.8;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #4299e1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .author-info h4 {
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-            color: #1e3a5f;
-        }
-        
-        .author-info p {
-            color: #4299e1;
-            font-size: 0.9rem;
         }
         
         /* FAQ Section */
@@ -747,6 +739,52 @@
             transform: rotate(45deg);
         }
         
+        /* Crisis Line */
+        .crisis {
+            background: rgba(255,240,240,0.5);
+            border: 1px solid rgba(200,80,80,0.3);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .crisis strong {
+            color: #a33;
+        }
+        
+        /* Email Capture */
+        .capture {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .capture input {
+            padding: 12px 16px;
+            border: 2px solid #4299e1;
+            border-radius: 50px;
+            width: min(320px, 80%);
+            font-size: 1rem;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        .capture button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            background: #4299e1;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Quicksand', sans-serif;
+            margin-left: 8px;
+        }
+        
         /* CTA Section */
         .cta-section {
             text-align: center;
@@ -797,6 +835,13 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 30px -5px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button.ghost {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 1rem;
         }
         
         /* Footer */
@@ -942,18 +987,19 @@
                 <div class="badge">✨ Breathe. Reset. Repeat.</div>
                 <h1 class="hero-title">Anxiety feels heavy.<br><span>You don't have to carry it alone.</span></h1>
                 <p class="hero-subtitle">Simple, science-backed tools to calm your mind in moments of panic or overwhelm. No login, no cost, just peace when you need it most.</p>
-                <a href="https://lumacare-app.vercel.app" class="btn btn-primary">Find Your Calm →</a>
+                <a href="#breathe" class="btn btn-primary">Start Breathing →</a>
                 <a href="#learn" class="btn btn-outline">Learn More</a>
             </div>
             <div class="hero-visual">
-                <div class="calm-card">
-                    <div class="breathing-circle">
-                        <div class="breathing-text">Breathe</div>
+                <div class="calm-card" id="breathe">
+                    <div class="breathing-circle" id="breathCircle">
+                        <div class="breathing-text" id="breathText">Breathe</div>
                     </div>
                     <div class="breathing-timer">
                         <span style="font-size: 2rem; font-weight: 600; color: #4299e1;">4-7-8</span> breathing
                     </div>
                     <p style="color: #1e3a5f; margin-top: 1rem; opacity: 0.8;">Inhale 4s • Hold 7s • Exhale 8s</p>
+                    <button class="btn btn-primary" id="breathBtn" style="margin-top:1rem" onclick="start478()">Start guided session</button>
                 </div>
             </div>
         </section>
@@ -962,7 +1008,7 @@
         <section class="stats">
             <div class="stat-card">
                 <div class="stat-number">40M</div>
-                <div class="stat-label">adults with anxiety in the US</div>
+                <div class="stat-label">adults with anxiety in the US <a href="https://www.nimh.nih.gov/health/statistics/any-anxiety-disorder" style="font-size:.8rem;opacity:.7">(NIMH)</a></div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">2min</div>
@@ -975,7 +1021,7 @@
         </section>
         
         <!-- How It Works -->
-        <section class="how-it-works">
+        <section class="how-it-works" id="learn">
             <h2 class="section-title">How It Works</h2>
             <p class="section-subtitle">Three simple steps to calm your nervous system</p>
             
@@ -1047,43 +1093,26 @@
             </div>
         </section>
         
-        <!-- Testimonials -->
+        <!-- Credibility Section -->
         <section class="testimonials">
-            <h2 class="section-title">Real Stories</h2>
-            <p class="section-subtitle">From people who've been where you are</p>
+            <h2 class="section-title">Built on Techniques That Actually Work</h2>
+            <p class="section-subtitle">Adapted from established, research-backed methods</p>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I used to have panic attacks at 3am with nowhere to turn. The breathing exercises got me through until I could see my therapist."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">E</div>
-                        <div class="author-info">
-                            <h4>Elena</h4>
-                            <p>Teacher</p>
-                        </div>
-                    </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">🧘</div>
+                    <h3 class="step-title">Breathwork</h3>
+                    <p class="step-desc">Paced breathing patterns like 4-7-8 are drawn from relaxation research popularized by Dr. Andrew Weil.</p>
                 </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"No login, no cost, no judgment. Just help when my brain wouldn't shut up. I use the grounding technique almost daily."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">D</div>
-                        <div class="author-info">
-                            <h4>David</h4>
-                            <p>Software Engineer</p>
-                        </div>
-                    </div>
+                <div class="step-card">
+                    <div class="step-icon">🧠</div>
+                    <h3 class="step-title">CBT</h3>
+                    <p class="step-desc">Cognitive restructuring is a core technique in cognitive behavioral therapy, one of the most studied treatments for anxiety.</p>
                 </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I didn't realize how much tension I was holding until I tried box breathing. My shoulders dropped an inch."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h4>Maya</h4>
-                            <p>Freelance Writer</p>
-                        </div>
-                    </div>
+                <div class="step-card">
+                    <div class="step-icon">🌱</div>
+                    <h3 class="step-title">Grounding</h3>
+                    <p class="step-desc">5-4-3-2-1 sensory anchoring comes from mindfulness-based stress reduction (MBSR) practice.</p>
                 </div>
             </div>
         </section>
@@ -1136,11 +1165,27 @@
             </div>
         </section>
         
+        <!-- Crisis Line -->
+        <section class="crisis">
+            <p style="color:#1e3a5f;"><strong>In crisis right now?</strong> If you're thinking about harming yourself, call or text <strong>988</strong> (US) or <strong>9-8-8</strong> (Canada) — free, 24/7, confidential. You matter.</p>
+        </section>
+        
+        <section class="capture">
+            <p style="font-weight:700; font-size:1.2rem; margin-bottom:0.5rem;">Get one small calm-down practice in your inbox each week.</p>
+            <p style="opacity:0.7; margin-bottom:1rem;">Free. Unsubscribe anytime. No spam.</p>
+            <form action="https://formspree.io/f/xzebdvvl" method="POST" id="captureForm">
+                <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address" />
+                <button type="submit" id="captureBtn">Send it to me</button>
+                <p id="captureSuccess" style="display:none; color:#2e7d32; font-weight:600; margin-top:1rem;">✓ Check your inbox to confirm.</p>
+            </form>
+        </section>
+        
         <!-- CTA Section -->
         <section class="cta-section">
             <h2 class="cta-title">Start Feeling Calmer Today</h2>
-            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; position: relative; z-index: 1; opacity: 0.9;">No login. No credit card. Just peace when you need it.</p>
-            <a href="https://lumacare-app.vercel.app" class="cta-button">👉 Try LumaCare Free</a>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; position: relative; z-index: 1; opacity: 0.9;">All core tools are free, no account needed. Sign in only if you want to save your progress.</p>
+            <a href="https://lumacare-app.vercel.app" class="cta-button">Try the tools free</a>
+            <a href="https://lumacare-app.vercel.app" class="cta-button ghost">Save progress with Google</a>
         </section>
         
         <!-- Footer with Logo -->
@@ -1183,7 +1228,9 @@
         </footer>
         
         <div class="copyright">
-            © 2026 LumaCare. Made with 💙 for anxious humans.
+            © 2026 LumaCare. Made with 💙 for anxious humans.<br>
+            LumaCare provides self-help tools and is not a substitute for professional diagnosis or treatment.<br>
+            <span style="font-size:.8rem;">In crisis? Call or text 988 (US) or 9-8-8 (Canada).</span>
         </div>
     </div>
     
@@ -1200,6 +1247,58 @@
             particlesContainer.appendChild(particle);
         }
         
+        // Real 4-7-8 guided breathing
+        function start478() {
+            const circle = document.getElementById('breathCircle');
+            const text = document.getElementById('breathText');
+            const btn = document.getElementById('breathBtn');
+            btn.disabled = true; btn.style.opacity = .5;
+            const phases = [["Inhale", 4000, "scale(1.25)"], ["Hold", 7000, "scale(1.25)"], ["Exhale", 8000, "scale(0.85)"]];
+            let cycle = 0, i = 0;
+            circle.style.animation = 'none';
+            (function step() {
+                if (cycle >= 4) {
+                    text.textContent = "Done 🌊"; circle.style.transform = "scale(1)";
+                    btn.disabled = false; btn.style.opacity = 1; btn.textContent = "Go again";
+                    circle.style.animation = 'breathe 8s infinite ease-in-out';
+                    return;
+                }
+                const [label, ms, tf] = phases[i];
+                text.textContent = label;
+                circle.style.transition = `transform ${ms}ms ease-in-out`;
+                circle.style.transform = tf;
+                setTimeout(() => { i++; if (i >= 3) { i = 0; cycle++; } step(); }, ms);
+            })();
+        }
+        
+        // Formspree email capture
+document.getElementById('captureForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('captureBtn');
+    const success = document.getElementById('captureSuccess');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    
+    try {
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+            this.innerHTML = '<p style="font-weight:600; color:#2e7d32;">✓ Check your inbox to confirm.</p>';
+        } else {
+            btn.disabled = false;
+            btn.textContent = 'Send it to me';
+            alert('Something went wrong. Please try again.');
+        }
+    } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Send it to me';
+        alert('Network error. Please try again.');
+    }
+});
+
         // Anxiety Scale Interactive
         const scaleButtons = document.querySelectorAll('.scale-btn');
         const scaleMessage = document.getElementById('scaleMessage');
@@ -1247,5 +1346,4 @@
         });
     </script>
 </body>
-
 </html>
